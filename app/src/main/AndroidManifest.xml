@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.updateplease">
 
+  <uses-permission android:name="android.permission.INTERNET"/>
+  // You need below permission to read contacts
+  <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -11,7 +15,7 @@
     android:theme="@style/AppTheme">
     <activity
       android:label="@string/app_name"
-      android:name=".view.SignupActivity"
+      android:name=".view.SplashActivity"
       android:theme="@style/AppTheme.NoActionBar">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
@@ -19,7 +23,26 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-
+    <activity
+      android:label="@string/title_activity_signup"
+      android:name=".view.SignupActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+    </activity>
+    <activity
+      android:label="@string/title_activity_task_home"
+      android:name=".view.TaskHomeActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+    </activity>
+    <activity
+      android:label="@string/title_activity_login"
+      android:name=".view.LoginActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+    </activity>
+    <activity
+      android:label="@string/title_activity_add_task"
+      android:name=".view.AddTaskActivity"
+      android:theme="@style/AppTheme.NoActionBar">
+    </activity>
   </application>
 
 </manifest>

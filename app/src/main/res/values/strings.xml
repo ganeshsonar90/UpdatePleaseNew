@@ -13,7 +13,37 @@
   <string name="txt_mobile">Mobile Number</string>
   <string name="txt_email">Email</string>
   <string name="sign_up">SIGN UP</string>
+  <string name="add_new_task">Add New Task</string>
+  <string name="no_record_found">Sorry No records found</string>
 
   <string name="error_field_required">This field is required</string>
   <string name="error_invalid_email">This email address is invalid</string>
+  <string name="something_went_wrong">Something went wrong. Please try again later.</string>
+  <string name="title_activity_login">LoginActivity</string>
+  <string name="txt_sign_up">SIGN UP</string>
+  <string name="dont_have_account">Don\'t have an account</string>
+  <string name="btn_get_otp">GET OTP</string>
+  <string name="enter_otp">Enter OTP</string>
+  <string name="invalid_otp">Invalid OTP</string>
+  <string name="title_activity_task_home">TaskHomeActivity</string>
+  <string name="from_date">From Date</string>
+  <string name="to_date">To Date</string>
+  <string name="all">All</string>
+  <string name="who">WHO</string>
+  <string name="what">WHAT</string>
+  <string name="when">WHEN</string>
+  <string name="done">Done</string>
+  <string name="done_cap">DONE</string>
+  <string name="title_activity_splash">SplashActivity</string>
+  <string name="title_activity_add_task">AddTaskActivity</string>
+  <string name="hint_remind_from">Remind From</string>
+  <string name="hint_due_date">Due Date</string>
+  <string name="repeat_task">Repeat Task</string>
+  <string name="btn_submit">SUBMIT</string>
+  <string name="success_added_remainder">Reminder Created Successfully</string>
+  <string name="label_reapeat_task">Repeat Task</string>
+  <string name="lbl_repeats">Repeats</string>
+  <string name="lbl_repeat_evy">Repeat every</string>
+  <string name="lbl_weeks">weeks</string>
+  <string name="cancel">CANCEL</string>
 </resources>

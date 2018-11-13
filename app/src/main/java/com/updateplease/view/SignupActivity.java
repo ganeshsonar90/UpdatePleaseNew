@@ -1,20 +1,23 @@
 package com.updateplease.view;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.updateplease.R;
 import com.updateplease.helper.Functions;
+import com.updateplease.presenter.SignUpPresenter;
 
-public class SignupActivity extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity implements SignUpMvpView {
 
   @BindView(R.id.toolbar)
   Toolbar toolbar;
@@ -36,13 +39,18 @@ public class SignupActivity extends AppCompatActivity {
   TextView mTxtMobile;
   @BindView(R.id.txt_email)
   TextView mTxtEmail;
+  @BindView(R.id.progressbar)
+  ProgressBar mProgressbar;
+  private SignUpPresenter presenter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_signup);
     ButterKnife.bind(this);
-
+//Set up presenter
+    presenter = new SignUpPresenter();
+    presenter.attachView(this);
 
     setSupportActionBar(toolbar);
 
@@ -53,8 +61,6 @@ public class SignupActivity extends AppCompatActivity {
       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
-
-
 
 
   }
@@ -75,24 +81,35 @@ public class SignupActivity extends AppCompatActivity {
 
     // Hide Keyboard
     Functions.hideSoftKeyboard(SignupActivity.this);
-
+    String firstName = mEdtFirstName.getText().toString().trim();
+    String lastName = mEdtLastName.getText().toString().trim();
+    String mobileNumber = mEdtMobile.getText().toString().trim();
     String email = mEdtEmail.getText().toString().trim();
 
-    // Check for empty data in the form
-    if (!email.isEmpty()) {
-      if (Functions.isValidEmailAddress(email)) {
-        // login user
-        //loginProcess(email, password);
-      } else {
-        Toast.makeText(getApplicationContext(), "Email is not valid!", Toast.LENGTH_SHORT).show();
-      }
+    presenter.signUpUserPostRaw(firstName, lastName, mobileNumber, email);
+
+
+  }
+
+  @Override
+  protected void onDestroy() {
+    presenter.detachView();
+    super.onDestroy();
+  }
+
+  @Override
+  public Context getContext() {
+    return this;
+  }
+
+
+  @Override
+  public void showProgressIndicator(boolean show) {
+    if (show) {
+      mProgressbar.setVisibility(View.VISIBLE);
     } else {
-      // Prompt user to enter credentials
-      Toast.makeText(getApplicationContext(), "Please enter the values!", Toast.LENGTH_LONG).show();
+      mProgressbar.setVisibility(View.GONE);
     }
-  
-
-
 
   }
 }

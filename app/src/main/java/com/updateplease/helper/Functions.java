@@ -2,6 +2,7 @@ package com.updateplease.helper;
 
 import android.app.Activity;
 import android.view.inputmethod.InputMethodManager;
+import java.util.Calendar;
 
 /**
  * Created by gboss on 02/11/18.
@@ -30,6 +31,17 @@ public class Functions {
             Activity.INPUT_METHOD_SERVICE);
     inputMethodManager.hideSoftInputFromWindow(
         activity.getCurrentFocus().getWindowToken(), 0);
+  }
+
+  public static String getCurrentDate(){
+    // Get Current Date
+    final Calendar c = Calendar.getInstance();
+    int mYear = c.get(Calendar.YEAR);
+    int mMonth = c.get(Calendar.MONTH);
+    int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+    return mYear + "-" + (mMonth) + "-" + mDay;
+
   }
 
 }

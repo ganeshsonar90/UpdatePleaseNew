@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <LinearLayout
+    android:id="@+id/ll_heder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    >
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:paddingLeft="15dp"
+      android:gravity="left"
+      android:text="@string/who"
+      android:textColor="@color/button_back"
+      />
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="left"
+      android:text="@string/what"
+      android:textColor="@color/button_back"
+      />
+    <TextView
+      android:textStyle="bold"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="left"
+      android:text="@string/when"
+      android:textColor="@color/button_back"
+      />
+
+  </LinearLayout>
+  <View
+    android:id="@+id/line"
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:layout_marginTop="25dp"
+    android:background="@color/gray"
+    app:layout_constraintTop_toBottomOf="@+id/ll_header"
+    app:layout_constraintTop_toTopOf="parent"
+    ></View>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    app:layout_constraintTop_toBottomOf="@+id/line"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+    <TextView
+      android:id="@+id/txt_who"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="User"
+      android:textColor="@color/black"
+      android:paddingLeft="12dp"
+      />
+    <TextView
+      android:id="@+id/txt_what"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:text="User"
+      android:textColor="@color/black"
+      />
+
+    <LinearLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"/>
+
+      <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        />
+
+      <TextView
+        android:id="@+id/txt_day_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"/>
+
+
+      <Button
+        android:id="@+id/btn_action"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:background="@drawable/button_shape"
+        android:text="@string/done"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        />
+
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

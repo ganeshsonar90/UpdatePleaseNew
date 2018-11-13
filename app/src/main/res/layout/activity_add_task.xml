@@ -5,7 +5,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="com.updateplease.view.SignupActivity">
+  tools:context="com.updateplease.view.AddTaskActivity">
 
   <android.support.design.widget.AppBarLayout
     android:layout_width="match_parent"
@@ -21,8 +21,7 @@
 
   </android.support.design.widget.AppBarLayout>
 
-  <include layout="@layout/content_signup"/>
-
+  <include layout="@layout/content_add_task"/>
   <ProgressBar
     android:id="@+id/progressbar"
     android:layout_width="wrap_content"

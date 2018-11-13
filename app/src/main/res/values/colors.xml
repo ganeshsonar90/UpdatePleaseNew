@@ -2,13 +2,15 @@
 <resources>
   <color name="colorPrimary">#3F51B5</color>
   <color name="colorPrimaryDark">#303F9F</color>
-  <color name="colorAccent">#FF4081</color>
+  <color name="colorAccent">#015F9C</color>
   <color name="black">#000000</color>
   <color name="white">#ffffff</color>
   <color name="button_press">#4286f4</color>
   <color name="button_back">#015F9C</color>
   <color name="hint">#D2D2D2</color>
-
+  <color name="dont_have_account">#245e83</color>
+  <color name="line">#2d8ccc</color>
+  <color name="gray">#e0e0e0</color>
 
 
 </resources>
